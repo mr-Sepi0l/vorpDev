@@ -1,0 +1,902 @@
+body {
+    background-color: transparent;
+    display: none;
+}
+
+.container {
+    position: auto;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    user-select: none;
+}
+
+
+.thirst {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 52%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+
+}
+
+.thirst-img,
+.hunger-img,
+.health-img,
+.stamina-img,
+.horsehealth-img,
+.horsestamina-img,
+.voice-img,
+.bath-img,
+.stress-img,
+.addiction-img,
+.temp-img {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-top: -17px;
+    left: -12px;
+    z-index: 20;
+}
+
+.staminaimg,
+.healthimg,
+.healthHorseimg,
+.staminaHorseimg,
+.thirstimg,
+.hungerimg,
+.voiceimg {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 6px;
+    top: 4px;
+    z-index: 20;
+
+}
+
+.hunger {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 49%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+
+}
+
+.health {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 40.3%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.staminaimg,
+.healthimg,
+.healthHorseimg,
+.staminaHorseimg {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    right: -12px;
+    top: -11px;
+    z-index: 20;
+
+}
+
+.stamina {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 37.4%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
+.horseHealth {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 32.0%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
+.horseStamina {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 34.7%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+h2.text-center#horseStamina-v,
+h2.text-center#horseHealth-v {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    padding: 5px;
+    right: -5px;
+    margin-top: -27px;
+    z-index: 20;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+}
+
+
+h2.text-center#voice-v {
+    position: absolute;
+    /*  background-color: rgba(0, 0, 0, 0.8); */
+    border-radius: 50%;
+    padding: 5px;
+    right: 1px;
+    margin-top: -35px;
+    z-index: 20;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+}
+
+.voice {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 54.8%;
+    top: 93.1%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.bath {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 57.6%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
+.bathimg {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 1px;
+    top: -4px;
+    z-index: 20;
+
+}
+
+.stress {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 60.3%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
+.stressimg {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 7.5px;
+    top: 5.1px;
+    z-index: 20;
+}
+
+.addiction {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 63%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
+.addictionimg {
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    right: 9.9px;
+    top: 5.8px;
+    z-index: 20;
+
+}
+
+
+.temp {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    right: 46%;
+    top: 93.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+
+}
+
+.tempimg {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: -15px;
+    top: -16px;
+    z-index: 20;
+
+}
+
+.templocal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 45.2%;
+    top: 91.4%;
+    padding: 6px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    z-index: 10;
+
+}
+
+.templocalnumber {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    right: -24px;
+    margin-top: 5px;
+    z-index: 20;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+}
+
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgb(175, 13, 13);
+    }
+
+    70% {
+        box-shadow: 0 0 0 14px rgba(237, 59, 59, 0.0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.0);
+    }
+}
+
+
+@keyframes pulseimg {
+    0% {
+        border-radius: 50%;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.9);
+    }
+
+    70% {
+        border-radius: 50%;
+        box-shadow: 0 0 0 14px rgba(245, 241, 241, 0.0);
+    }
+
+    100% {
+        border-radius: 50%;
+        box-shadow: 0 0 0 0 rgba(245, 242, 242, 0.0);
+    }
+}
+
+@keyframes pulseicon {
+    0% {
+        transform: scale(0.85);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.85);
+    }
+}
+
+.updateId {
+    display: inline-block;
+}
+
+.gif2,
+.gif1,
+.gif {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    right: 20%;
+    color: white;
+    font-size: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    animation: fadeslideUp 6s infinite;
+    z-index: 30;
+}
+
+.gif3 {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    right: 20%;
+    color: white;
+    font-size: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    animation: fadeslideUp 4s infinite;
+    z-index: 30;
+}
+
+.gif h2 {
+    text-align: center;
+}
+
+#g3,
+#g2,
+#g1 {
+    animation-delay: -4s;
+    -webkit-animation-delay: -4s;
+}
+
+
+
+@keyframes fadeslideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(-140%);
+        -ms-transform: translateY(-140%);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(-140%);
+        -ms-transform: translateY(-140%);
+    }
+
+    25% {
+        opacity: 0;
+        transform: translateY(-180%);
+        -ms-transform: translateY(-180%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-180%);
+        -ms-transform: translateY(-180%);
+    }
+}
+
+
+
+@keyframes fadeslideUpTemp {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(-180%);
+        -ms-transform: translateY(-140%);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(-180%);
+        -ms-transform: translateY(-180%);
+    }
+
+    25% {
+        opacity: 0;
+        transform: translateY(-200%);
+        -ms-transform: translateY(-200%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-300%);
+        -ms-transform: translateY(-300%);
+    }
+}
+
+
+@media (max-width:1920px) {
+
+    .thirst {
+        width: 25px;
+        height: 25px;
+        right: 53%;
+        top: 92.3%;
+    }
+
+    .voice-img,
+    .bath-img,
+    .temp-img,
+    .hunger-img,
+    .thirst-img {
+        width: 55px;
+        height: 55px;
+        top: 9px;
+        left: -9px;
+    }
+
+    .thirstimg {
+        width: 30px;
+        height: 30px;
+        right: 4px;
+        top: 3px;
+    }
+
+
+    .hunger {
+        width: 25px;
+        height: 25px;
+        right: 49.9%;
+        top: 92.3%;
+        padding: 6px;
+    }
+
+    .hungerimg {
+        width: 30px;
+        height: 30px;
+        right: 4px;
+    }
+
+    .temp {
+        width: 25px;
+        height: 25px;
+        right: 46.7%;
+        top: 92.3%;
+        padding: 6px;
+
+    }
+
+
+    .tempimg {
+        width: 70px;
+        height: 70px;
+        right: -17px;
+        top: -17px;
+    }
+
+    .templocal {
+        width: 20px;
+        height: 20px;
+        right: 43.6%;
+        top: 92.3%;
+        padding: 6px;
+    }
+
+    .templocalnumber {
+        right: -32px;
+        margin-top: 2px;
+        font-size: 13px;
+    }
+
+    .bath {
+        width: 25px;
+        height: 25px;
+        right: 59.2%;
+        top: 92.3%;
+        padding: 6px;
+
+
+    }
+
+    .bathimg {
+        width: 40px;
+        height: 40px;
+        right: -1px;
+        top: -4px;
+
+    }
+
+    .voice {
+
+        width: 25px;
+        height: 25px;
+        right: 56.1%;
+        top: 92.3%;
+        padding: 6px;
+
+    }
+
+    .voiceimg {
+        width: 28px;
+        height: 28px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .health {
+        width: 28px;
+        height: 28px;
+        right: 40.6%;
+        top: 92.8%;
+        padding: 6px;
+    }
+
+    .horsestamina-img,
+    .horsehealth-img,
+    .stamina-img,
+    .health-img {
+        width: 58px;
+        height: 56px;
+        margin-top: -15px;
+        left: -8px;
+        z-index: 20;
+    }
+
+    .healthimg {
+        width: 61px;
+        height: 61px;
+        right: -12px;
+        top: -10px;
+        z-index: 20;
+    }
+
+    .stamina {
+        width: 28px;
+        height: 28px;
+        right: 37.8%;
+        top: 92.8%;
+        padding: 6px;
+    }
+
+
+    .staminaimg {
+        width: 61px;
+        height: 61px;
+        right: -12px;
+        top: -10px;
+    }
+
+    .horseHealth {
+
+        width: 28px;
+        height: 28px;
+        right: 34.9%;
+        top: 92.8%;
+        z-index: 10;
+    }
+
+
+    .healthHorseimg {
+
+        width: 65px;
+        height: 65px;
+        right: -11px;
+        top: -13px;
+        z-index: 20;
+
+    }
+
+
+    .horseStamina {
+        width: 28px;
+        height: 28px;
+        right: 32%;
+        top: 92.8%;
+        z-index: 10;
+    }
+
+    .staminaHorseimg {
+        width: 65px;
+        height: 65px;
+        right: -11px;
+        top: -13px;
+        z-index: 20;
+    }
+
+    .stress {
+        width: 25px;
+        height: 25px;
+        right: 62.3%;
+        top: 92.3%;
+    }
+
+    .stress-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .stressimg {
+        width: 30px;
+        height: 30px;
+        right: 4px;
+        top: 3px;
+    }
+
+    .addiction {
+        width: 25px;
+        height: 25px;
+        right: 65.5%;
+        top: 92.3%;
+    }
+
+    .addiction-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .addictionimg {
+        width: 25px;
+        height: 25px;
+        right: 4px;
+        top: 3px;
+    }
+
+    h2.text-center#horseStamina-v,
+    h2.text-center#horseHealth-v {
+        right: -5px;
+        margin-top: -27px;
+        z-index: 20;
+        font-size: 12px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: white;
+    }
+
+
+}
+
+@media (min-width:3840px) {
+
+    .thirst {
+        width: 55px;
+        height: 55px;
+        right: 53%;
+        top: 94%;
+    }
+
+    .hunger-img,
+    .temp-img,
+    .bath-img,
+    .voice-img,
+    .health-img,
+    .horsehealth-img,
+    .horsestamina-img,
+    .stamina-img,
+    .addiction-img,
+    .stress-img,
+    .thirst-img {
+        width: 103px;
+        height: 103px;
+        top: -1px;
+        left: -19px
+    }
+
+    .thirstimg {
+        width: 55px;
+        height: 55px;
+        right: 5px;
+        top: 6px;
+    }
+
+
+    .hunger {
+        width: 55px;
+        height: 55px;
+        right: 50.5%;
+        top: 94%;
+        padding: 6px;
+    }
+
+    .hungerimg {
+        width: 55px;
+        height: 55px;
+        right: 6px;
+    }
+
+    .temp {
+        width: 57px;
+        height: 57px;
+        right: 48.0%;
+        top: 94%;
+        padding: 6px;
+    }
+
+    .tempimg {
+        width: 120px;
+        height: 120px;
+        right: -25px;
+        top: -26px;
+    }
+
+    .templocal {
+
+        width: 55px;
+        height: 55px;
+        right: 45.8%;
+        top: 94%;
+        padding: 6px;
+    }
+
+    .templocalnumber {
+        right: -6px;
+        margin-top: 14px;
+        font-size: 25px;
+    }
+
+    .bath {
+        width: 57px;
+        height: 57px;
+        right: 57.9%;
+        top: 94%;
+        padding: 6px;
+    }
+
+    .bathimg {
+        width: 75px;
+        height: 75px;
+        right: 0px;
+        top: -4px;
+    }
+
+    .voice {
+        width: 57px;
+        height: 57px;
+        right: 55.4%;
+        top: 94%;
+        padding: 6px;
+    }
+
+    .voiceimg {
+        width: 55px;
+        height: 55px;
+        top: 2px;
+        right: 7px;
+    }
+
+    .health {
+        width: 57px;
+        height: 57px;
+        right: 43.3%;
+        top: 94%;
+        padding: 6px;
+
+    }
+
+    .healthimg {
+        width: 110px;
+        height: 110px;
+        right: -21px;
+        top: -20px;
+        z-index: 20;
+
+    }
+
+    .stamina {
+        width: 57px;
+        height: 57px;
+        right: 40.8%;
+        top: 94%;
+        padding: 6px;
+
+    }
+
+    .staminaimg {
+        width: 110px;
+        height: 110px;
+        right: -21px;
+        top: -20px;
+    }
+
+    .horseHealth {
+        width: 55px;
+        height: 55px;
+        right: 38.4%;
+        top: 94%;
+    }
+
+    .healthHorseimg {
+        width: 119px;
+        height: 119px;
+        top: -22px;
+        left: -27px
+    }
+
+    .horseStamina {
+        width: 55px;
+        height: 55px;
+        right: 36.0%;
+        top: 94%;
+    }
+
+    .staminaHorseimg {
+        width: 119px;
+        height: 119px;
+        top: -22px;
+        left: -27px
+    }
+
+    .addiction {
+        width: 55px;
+        height: 55px;
+        right: 62.8%;
+        top: 94%;
+    }
+
+    .addictionimg {
+        width: 55px;
+        height: 55px;
+        right: 5px;
+        top: 6px;
+    }
+
+    .stress {
+        width: 55px;
+        height: 55px;
+        right: 60.3%;
+        top: 94%;
+    }
+
+    .stressimg {
+        width: 55px;
+        height: 55px;
+        right: 5px;
+        top: 6px;
+    }
+
+    h2.text-center#horseStamina-v,
+    h2.text-center#horseHealth-v {
+        right: -5px;
+        margin-top: -27px;
+        z-index: 20;
+        font-size: 15px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: white;
+    }
+
+}

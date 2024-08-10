@@ -1,0 +1,22 @@
+<1.6>
+- General cleanup
+- Added Handsup options
+- Fix wrong button for pointing
+<1.5>
+- Added languages
+- Added ragdoll with 2 options
+<1.4>
+- Added traffic support
+<1.3>
+- Added more configs to enable
+- Added doorbarge
+- Made config cleaner
+- Changed Languages to 1 config
+<1.2>
+- Blips
+It is now possible to add more blips to your map. 
+Add the blips in blips.lua
+<1.1>
+- Handsup
+- Pointing
+<1.0>
