@@ -2,7 +2,7 @@
 --------------------------------------- CONFIG -----------------------------------------------------
 -- VORP INVENTORY LUA*
 
-Lang = "English"
+Lang = "Francais"
 
 Config = {
 	--======================= DEVELOPMENT ==============================--
@@ -20,7 +20,7 @@ Config = {
 	AddDollarItem            = true, -- Should there be an item in inventory to represent dollars
 	AddAmmoItem              = true, -- Should there be an item in inventory to represent the gun belt
 	InventorySearchable      = true, -- Should the search bar appear in inventories
-	InventorySearchAutoFocus = true, -- Search autoofocuses when you type
+	InventorySearchAutoFocus = false, -- Search autoofocuses when you type
 	-- DEATH FUNCTIONS
 	DisableDeathInventory    = true, -- prevent the ability to access inventory while dead
 	--{ I } OPEN INVENTORY
@@ -39,22 +39,22 @@ Config = {
 	OnPlayerRespawn     = {
 		Money = {
 			JobLock         = { "police", "doctor" },
-			ClearMoney      = true, -- if true then removes all money from player
+			ClearMoney      = false, -- if true then removes all money from player
 			MoneyPercentage = false, -- if false wont use percentage if you add number   0.1 = 10% of money user have instead of all
 		},
 		Items = {
 			JobLock       = { "police", "doctor" },
 			itemWhiteList = { "consumable_raspberrywater", "ammorevolvernormal" }, -- if you dont want an item a user could have to be deleted
-			AllItems      = true,                                         -- if true then removes all items from player
+			AllItems      = false,                                         -- if true then removes all items from player
 		},
 		Weapons = {
 			JobLock           = { "police", "doctor" },
 			WeaponWhitelisted = { "WEAPON_MELEE_KNIFE", "WEAPON_BOW" }, -- if you dont want a weapon a user could have to be deleted
-			AllWeapons        = true,                          -- if true then removes all weapons from player
+			AllWeapons        = false,                          -- if true then removes all weapons from player
 		},
 		Ammo = {
 			JobLock = { "police", "doctor" },
-			AllAmmo = true, -- if true then removes all ammo from player
+			AllAmmo = false, -- if true then removes all ammo from player
 		},
 		Gold = {
 			JobLock        = { "police", "doctor" },

@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<CMapData>
+	<flags value="2"/>
+	<contentFlags value="65"/>
+	<streamingExtentsMin x="-5906.471680" y="-3314.716309" z="-414.281191"/>
+	<streamingExtentsMax x="3352.404297" y="1754.813965" z="560.218292"/>
+	<entitiesExtentsMin x="-5506.471680" y="-2914.716309" z="-14.281191"/>
+	<entitiesExtentsMax x="2952.404297" y="1354.813965" z="160.218292"/>
+	<entities>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="-5506.471680" y="-2914.716309" z="-3.420612"/>
+			<rotation w="0.968694" x="0.000000" y="-0.000000" z="-0.248258"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="75"/>
+			<childLodDist value="75"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="-831.578247" y="-1345.654175" z="42.578583"/>
+			<rotation w="0.011582" x="-0.000000" y="0.000000" z="0.999933"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="75"/>
+			<childLodDist value="75"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="-1828.772217" y="-409.670898" z="160.218292"/>
+			<rotation w="0.887016" x="0.000000" y="-0.000000" z="-0.461739"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="75"/>
+			<childLodDist value="75"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="2956.080078" y="1360.877930" z="43.649376"/>
+			<rotation w="0.165080" x="-0.001440" y="-0.008605" z="-0.986242"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="75"/>
+			<childLodDist value="75"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="-3679.938232" y="-2600.137451" z="-14.391433"/>
+			<rotation w="0.999999" x="0.000000" y="-0.000000" z="-0.001424"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="75"/>
+			<childLodDist value="75"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="-268.933014" y="764.504333" z="116.553383"/>
+			<rotation w="0.129985" x="0.004228" y="-0.025093" z="0.991189"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="75"/>
+			<childLodDist value="75"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="1272.529175" y="-1282.293091" z="74.162193"/>
+			<rotation w="0.318206" x="0.000000" y="-0.000000" z="-0.948022"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="75"/>
+			<childLodDist value="75"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+		<Item type="CEntityDef">
+			<archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+			<flags value="1572897"/>
+			<position x="2954.994873" y="530.753662" z="43.534374"/>
+			<rotation w="0.711050" x="0.000000" y="-0.000000" z="-0.703141"/>
+			<scaleXY value="1"/>
+			<scaleZ value="1"/>
+			<parentIndex value="-1"/>
+			<lodDist value="75"/>
+			<childLodDist value="75"/>
+			<lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+			<numChildren value="0"/>
+			<ambientOcclusionMultiplier value="255"/>
+			<artificialAmbientOcclusion value="255"/>
+		</Item>
+        <Item type="CEntityDef">
+            <archetypeName>mp005_p_mp_bountyboard01x</archetypeName>
+            <flags value="1572897"/>
+            <position x="-2731.036377" y="-2933.561523" z="64.959999"/>
+            <rotation w="0.186251" x="-0.000000" y="0.000000" z="0.982502"/>
+            <scaleXY value="1"/>
+            <scaleZ value="1"/>
+            <parentIndex value="-1"/>
+            <lodDist value="500"/>
+            <childLodDist value="500"/>
+            <lodLevel>LODTYPES_DEPTH_HD</lodLevel>
+            <numChildren value="0"/>
+            <ambientOcclusionMultiplier value="255"/>
+            <artificialAmbientOcclusion value="255"/>
+        </Item>
+	</entities>
+</CMapData>

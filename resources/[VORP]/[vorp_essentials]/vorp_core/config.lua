@@ -27,7 +27,7 @@ Config = {
     initGold               = 0.0,          -- Initial gold amount for new players.
     initMoney              = 200.0,        -- Initial money amount for new players.
     initRol                = 0.0,          -- Initial role-play currency amount for new players.
-    initInvCapacity        = 35.0,         -- Initial number of character inventory weight for new players. for old characters you must change in the database if you dont ave a new server
+    initInvCapacity        = 20.0,         -- Initial number of character inventory weight for new players. for old characters you must change in the database if you dont ave a new server
     initXp                 = 0,            -- Initial experience points for new players.
     initJob                = "unemployed", -- Default job for new players. Recommended not to change.
     initJobGrade           = 0,            -- Default job grade for new players. Recommended not to change.
@@ -50,14 +50,14 @@ Config = {
     --=============================================
 
     SaveDiscordId          = true, -- Saves Discord ID in the character/user database upon joining/leaving.
-    MaxCharacters          = 5,    -- Maximum number of characters a player can create. when first join, for old users go to users table and change the number of characters there
+    MaxCharacters          = 1,    -- Maximum number of characters a player can create. when first join, for old users go to users table and change the number of characters there
 
     --=============================================
     --             UI CORE SETTINGS              --
     --=============================================
 
     HideOnlyDEADEYE        = true,  -- Hides only the Dead Eye core in the UI.
-    HidePlayersCore        = false, -- Hides player cores in the UI.
+    HidePlayersCore        = true, -- Hides player cores in the UI.
     HideHorseCores         = false, -- Hides horse cores in the UI.
 
     --=============================================
@@ -77,15 +77,15 @@ Config = {
 
 
     HideUi                = false,       -- Shows or hides the overall UI.
-    HideGold              = false,       -- Disables the Gold UI for all players.
+    HideGold              = true,       -- Disables the Gold UI for all players.
     HideMoney             = false,       -- Disables the Money UI for all players.
-    HideLevel             = false,       -- Disables the Level UI for all players.
+    HideLevel             = true,       -- Disables the Level UI for all players.
     HideID                = false,       -- Disables the ID UI for all players.
-    HideTokens            = false,       -- Disables the Token UI for all players.
-    HidePVP               = false,       -- Disables the PVP UI for all players.
-    UIPosition            = 'TopRight',  -- Sets the UI position on the screen. Options are 'TopRight', 'TopLeft', 'BottomRight', 'BottomLeft', 'MiddleRight', 'TopMiddle', 'BottomMiddle'.
+    HideTokens            = true,       -- Disables the Token UI for all players.
+    HidePVP               = true,       -- Disables the PVP UI for all players.
+    UIPosition            = 'TopMiddle',  -- Sets the UI position on the screen. Options are 'TopRight', 'TopLeft', 'BottomRight', 'BottomLeft', 'MiddleRight', 'TopMiddle', 'BottomMiddle'.
 
-    UILayout              = 'Column',    -- Sets the UI layout, options are 'Row' or 'Column'.
+    UILayout              = 'Row',    -- Sets the UI layout, options are 'Row' or 'Column'.
     HideWithRader         = true,        -- UI hides when the radar (minimap) is hidden.
     OpenAfterRader        = true,        -- UI shows when the radar (minimap) reappears.
     CloseOnDelay          = false,       -- UI automatically closes after a set time.

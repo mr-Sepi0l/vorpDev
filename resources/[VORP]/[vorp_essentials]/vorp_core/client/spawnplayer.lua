@@ -71,8 +71,8 @@ end)
 --EVENTS character Innitialize
 RegisterNetEvent('vorp:initCharacter')
 AddEventHandler('vorp:initCharacter', function(coords, heading, isdead)
-    CoreAction.Player.TeleportToCoords(coords, heading)
 
+    CoreAction.Player.TeleportToCoords(coords, heading)
     if isdead then
         if not Config.CombatLogDeath then
             if Config.Loadinscreen then

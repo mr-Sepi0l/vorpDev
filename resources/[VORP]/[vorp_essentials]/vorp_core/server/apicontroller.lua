@@ -56,7 +56,8 @@ CoreFunctions.NotifySimpleTop = function(source, text, subtitle, duration)
 end
 
 CoreFunctions.NotifyAvanced = function(source, text, dict, icon, text_color, duration, quality, showquality)
-    TriggerClientEvent('vorp:ShowAdvancedRightNotification', source, text, dict, icon, text_color, duration, quality, showquality)
+    TriggerClientEvent('vorp:ShowAdvancedRightNotification', source, text, dict, icon, text_color, duration, quality,
+        showquality)
 end
 
 CoreFunctions.NotifyCenter = function(source, text, duration, color)
