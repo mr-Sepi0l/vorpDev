@@ -1,0 +1,62 @@
+---@class EntityInRange
+---@field protected _listeners_by_id table<number,EntityInRangeListener> Table[ListenerId:EntityInRangeListener]
+---@field protected _registered_model_hashes table<number,table<number,number>> Table[ModelHash:Table[ListenerId:boolean]]
+---@field protected _entered_listeners table<number,boolean> Table[ListenerId:Boolean]
+---@field protected _monitor boolean True if event loop should be monitoring otherwise false.
+---@field protected _last_entered_entity EntityInRangeData
+---@field protected _max_range number
+---@field protected _last_player_position string
+
+---@class EntityInRangeData
+---@field entity number
+---@field model_hash number
+---@field vector_coords table<number>
+---@field x number
+---@field y number
+---@field z number
+---@field distance number
+
+---@alias EntityInRangeApiModelNameOrHash string|number|table<string|number>
+---@alias EntityInRangeApiHashFilter table<number, boolean>
+---@alias EntityInRangeApiCustomFilterFunction fun(entity:number, model_hash:number):boolean
+
+---@class EntityInRangeApi
+---@field create fun(model_names:table<number,string>, on_enter_callback:fun(nearest_entity:EntityInRangeData, listener_id:number), on_leave_callback:fun(nearest_entity:EntityInRangeData, listener_id:number), custom_range:number):EntityInRangeListener
+---@field getListenerById fun(listener_id:number):EntityInRangeListener
+---@field getNearestObjectEntity fun(x:number, y:number, z:number, model_name_or_hash:EntityInRangeApiModelNameOrHash, range:number|nil, entity_type:number|nil):EntityInRangeData|nil
+---@field getEntitiesNearby fun(x:number, y:number, z:number, model_name_or_hash:EntityInRangeApiModelNameOrHash, range:number|nil, entity_type:number|nil, filter_func:EntityInRangeApiCustomFilterFunction|nil):EntityInRangeData[]|nil
+---@field ENTITY_TYPE_OBJECT number
+---@field ENTITY_TYPE_PLAYER number
+---@field ENTITY_TYPE_VEHICLE number
+
+---@class EntityInRangeListener
+---@field protected max_range number
+---@field protected id number
+---@field protected model_names table<string>
+---@field protected model_hashes table<number>
+---@field protected is_entered boolean
+---@field protected resource_name string
+---@field protected on_enter_callback fun(nearest_entity:EntityInRangeData, listener_id:number):void
+---@field protected on_leave_callback fun(nearest_entity:EntityInRangeData, listener_id:number):void
+---@field on fun():EntityInRangeListener
+---@field off fun():EntityInRangeListener
+---@field remove fun():EntityInRangeListener
+---@field setMaxRange fun(max_range:number):EntityInRangeListener
+---@field getMaxRange fun():number
+---@field isOutOfMaxRange fun(distance:number):boolean
+---@field isInMaxRange fun(distance:number):boolean
+---@field getResourceName fun():string
+
+---@class PlayerCoordsVector
+---@field x number
+---@field y number
+---@field z number
+
+---@class EntityInRangeController
+---@field protected _listeners_by_resource table<string,table<number,boolean>> Table[ListenerId:EntityInRangeListener]
+---@field protected _is_initialized boolean
+---@field protected _event_name_create string
+---@field initialize fun():void
+---@field removeAllByResource fun(resource_name:string):void
+---@field rememberListenerIdOfResource fun(listener:EntityInRangeListener):void
+---@field forgetListenerIdOfResource fun(listener:EntityInRangeListener):void

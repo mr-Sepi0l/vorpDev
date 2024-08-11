@@ -1,0 +1,2 @@
+---@class DependencyAutoRestartApi
+---@field reloadDependencies fun():void

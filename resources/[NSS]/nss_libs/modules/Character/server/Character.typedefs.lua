@@ -1,0 +1,61 @@
+---@alias NssLibsCharacterJobName string
+---@alias NssLibsCharacterJobGrade number
+---@alias NssLibsCharacterJobList table<NssLibsCharacterJobName, NssLibsCharacterJobGrade>
+
+---@alias NssLibsCharacterOnGroupChangeCallback fun(source:number, char_id:number, new_group:string):void
+---@alias NssLibsCharacterOnJobChangeCallback fun(source:number, char_id:number, new_job:string):void
+---@alias NssLibsCharacterOnJobGradeChangeCallback fun(source:number, char_id:number, new_job_grade:number):void
+
+---@class NssLibsCharacterWrappedItem
+---@field char_id number
+---@field group string
+---@field job string
+---@field job_grade number
+---@field firstname string
+---@field lastname string
+---@field full_name string
+---@field money number
+---@field is_admin boolean
+---@field server_player_id number|nil
+
+---@class NssLibsCharacterItem:NssLibsCharacterWrappedItem
+---@field hasOneOfTheJobs fun(jobs: NssLibsCharacterJobList|NssLibsCharacterJobName[]): boolean
+---@field hasJobGrade fun(grade: NssLibsCharacterJobGrade): boolean
+---@field hasJob fun(grade: NssLibsCharacterJobName): boolean
+---@field isEmployed fun(): boolean
+
+---@class NssLibsCharacterIdentifiers
+---@field steam string
+---@field license string
+---@field xbl string
+---@field live string
+---@field discord string
+---@field fivem string
+---@field license2 string
+---@field ip string
+
+---@class NssLibsCharacterApi
+---@field addMoney fun(_source: number, amount: number): void
+---@field getCharacterByName fun(character_name:string): NssLibsCharacterItem|nil
+---@field getCharacterByCharId fun(char_id:number): NssLibsCharacterItem|nil
+---@field getCharData fun(_source: number): NssLibsCharacterItem|nil
+---@field getDiscordId fun(_source: number): string
+---@field getDiscordProfileUrl fun(_source: number): string
+---@field getFivmId fun(_source: number): string
+---@field getIdentifiers fun(_source: number): NssLibsCharacterIdentifiers
+---@field getIp fun(_source: number): string
+---@field getRedmCharacterName fun(_source: number): string
+---@field getSteamId fun(_source: number): string
+---@field getSteamProfileUrl fun(_source: number): string
+---@field hasMoney fun(_source: number, amount: number): boolean
+---@field subMoney fun(_source: number, amount: number): void
+---@field addGold fun(_source: number, amount: number): void
+---@field hasGold fun(_source: number, amount: number): boolean
+---@field subGold fun(_source: number, amount: number): void
+---@field hasOneOfTheJobs fun(char_data:NssLibsCharacterItem, jobs: NssLibsCharacterJobName|NssLibsCharacterJobName[]): boolean
+---@field hasJob fun(char_data:NssLibsCharacterItem): boolean
+---@field onGroupChange fun(callback:NssLibsCharacterOnGroupChangeCallback): NssLibsSharedHelperEventHandlerApi
+---@field onJobChange fun(callback:NssLibsCharacterOnJobChangeCallback): NssLibsSharedHelperEventHandlerApi
+---@field onJobGradeChange fun(callback:NssLibsCharacterOnJobGradeChangeCallback): NssLibsSharedHelperEventHandlerApi
+---@field getSteamIdOfChar fun(char_id:string|number): string|nil
+---@field getSourceOfChar fun(char_id:string|number): number|nil

@@ -1,0 +1,28 @@
+---@alias NssLibsSharedHelperEventHandlerApiCallback fun(vararg any):boolean|nil
+---@alias NssLibsSharedHelperEventHandlerApiOnDestroyCallback fun(event_handler_api:NssLibsSharedHelperEventHandlerApi):void
+
+---@class NssLibsSharedHelperEventHandlerApi
+---@field private _uid number
+---@field private _event_handler_ref any
+---@field private _resource_name string
+---@field private _event_name string
+---@field private _is_initialized boolean
+---@field private _callbacks NssLibsSharedHelperEventHandlerApiCallback[]
+---@field private _enabled boolean
+---@field private _on_destroy_callback NssLibsSharedHelperEventHandlerApiOnDestroyCallback|nil
+---@field addAdditionalCallback fun(additional_callback:NssLibsSharedHelperEventHandlerApiCallback):NssLibsSharedHelperEventHandlerApi
+---@field private _isInitialized fun():boolean
+---@field private _initialize fun():NssLibsSharedHelperEventHandlerApi
+---@field isDestroyed fun():boolean
+---@field isDisabled fun():boolean
+---@field isEnabled fun():boolean
+---@field destroy fun():void
+---@field getEventHandlerReference fun():any
+---@field enable fun():NssLibsSharedHelperEventHandlerApi
+---@field disable fun():NssLibsSharedHelperEventHandlerApi
+---@field addSourceToCallback fun():NssLibsSharedHelperEventHandlerApi
+---@field doNotAddSourceToCallback fun():NssLibsSharedHelperEventHandlerApi
+---@field getUid fun():number
+---@field getResourceName fun():string
+---@field setCustomData fun(key:string|number, value:any):NssLibsSharedHelperEventHandlerApi
+---@field getCustomData fun(key:string|number):any

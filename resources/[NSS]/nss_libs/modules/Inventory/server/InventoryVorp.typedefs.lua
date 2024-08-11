@@ -1,0 +1,107 @@
+---@class VorpItemDbRow
+---@field id number
+---@field item string
+---@field label string
+---@field limit number
+---@field can_remove number (1 yes, 0 no)
+---@field type string (item_standard)
+---@field usable number (1 yes, 0 no)
+---@field desc string
+
+---@class VorpItem
+---@field id number
+---@field item string
+---@field label string
+---@field limit number
+---@field can_remove boolean
+---@field type string
+---@field usable boolean
+---@field desc string
+
+---@class VorpInventoryItem
+---@field type string
+---@field limit number
+---@field label string
+---@field count number
+---@field id number
+---@field canUse boolean
+---@field metadata table<string,any>
+---@field name string
+
+---@class VorpInventoryWeapon
+---@field id number
+---@field name string
+---@field propietary string
+---@field ammo table<string,number>
+---@field used boolean
+
+---@class VorpInventory
+---@field registerInventory fun(id:number, name:string, limit:number, acceptWeapons:boolean, shared:boolean, ignoreItemStackLimit:boolean, whitelistItems:boolean):void
+---@field removeInventory fun(id:number):void
+---@field setInventoryItemLimit fun(id:number, itemName:string, limit:number):void
+---@field setInventoryWeaponLimit fun(id:number, weaponName:string, limit:number):void
+---@field subWeapon fun(source:number, weaponid:number):void
+---@field createWeapon fun(source:number, weaponName:string, ammoaux:table, compaux:table, comps:table):void
+---@field deletegun fun(source:number, id:number):void
+---@field canCarryWeapons fun(source:number, amount:number, cb:fun(canCarryWeapons:boolean)):void
+---@field getcomps fun(source:number, weaponid:number):table
+---@field giveWeapon fun(source:number, weaponid:number, target:number):void
+---@field getItem fun(source:number, itemName:string, metadata:table):VorpItem
+---@field addItem fun(source:number, itemName:string, qty:number, metadata:table):boolean
+---@field subItem fun(source:number, itemName:string, qty:number, metadata:table):boolean
+---@field setItemMetadata fun(source:number, itemId:number, metadata:table):boolean
+---@field getItemByName fun(source:number, itemName:string):VorpItemDbRow
+---@field getItemContainingMetadata fun(source:number, itemName:string, metadata:table):VorpItemDbRow
+---@field getItemMatchingMetadata fun(source:number, itemName:string, metadata:table):VorpItemDbRow
+---@field getItemCount fun(source:number, item:string, metadata:table):number
+---@field getDBItem fun(source:number, itemName:string):VorpItemDbRow
+---@field addBullets fun(source:number, weaponId:number,type:string, qty:number):void
+---@field subBullets fun(source:number, weaponId:number,type:string, qty:number):void
+---@field getWeaponBullets fun(source:number, weaponId:number):table
+---@field getWeaponComponents fun(source:number, weaponId:number):table
+---@field getUserWeapons fun(source:number):table
+---@field canCarryItems fun(source:number, amount:number):boolean
+---@field canCarryItem fun(source:number, item:string, amount:number):boolean
+---@field getUserWeapon fun(source:number, weaponId:number):table
+---@field registerUsableItem fun(itemName:string, cb:function):table
+---@field getUserInventory fun(source:number):VorpItem[]
+---@field CloseInv fun(source:number, invId:number|nil):void
+---@field OpenInv fun(source:number, invId:number|nil):void
+---@field destroy fun(resource_name:VorpInventoryResourceName):void
+---@field listenInventoryChange fun(callback:NssLibsInventoryOnChangeCallback, resource_name:VorpInventoryResourceName):void
+---@field existsItemInDb fun(item_name:string):boolean
+---@field getMoneyImage fun():string
+---@field getGoldImage fun():string
+---@field getWeaponImage fun(weapon_name:string):string
+---@field canCarryWeapon fun(_source:number, weapon_name:string, amount:number):boolean
+---@field createWeapon fun(_source:number, weapon_name:string, ammo:table<string, number>|nil, custom_serial:string|nil, custom_label:string|nil, custom_desc:string|nil):boolean
+---@field getWeaponImages fun(weapon_names:string|string[]):NssLibsInventoryAllWeaponImageList
+---@field closeInventory fun(player:number):void
+---@field onCustomInventoryOpen fun(callback:NssLibsInventoryVorpOpenCustomInvCallback):NssLibsSharedHelperEventHandlerApi
+---@field onBankInventoryOpen fun(callback:NssLibsInventoryVorpOpenBankInvCallback):NssLibsSharedHelperEventHandlerApi
+---@field onMoveToCustomInventory fun(callback:NssLibsInventoryVorpMoveToCustomInvCallback):NssLibsSharedHelperEventHandlerApi
+---@field onMoveToBankInventory fun(callback:NssLibsInventoryVorpMoveToBankInvCallback):NssLibsSharedHelperEventHandlerApi
+---@field onTakeFromCustomInventory fun(callback:NssLibsInventoryVorpTakeFromCustomInvCallback):NssLibsSharedHelperEventHandlerApi
+---@field onTakeFromBankInventory fun(callback:NssLibsInventoryVorpTakeFromBankInvCallback):NssLibsSharedHelperEventHandlerApi
+
+---@class VorpInventoryOnItemUsedDataItem
+---@field desc string
+---@field limit number
+---@field type string
+---@field canRemove boolean
+---@field id number ID of item table entries.
+---@field label string
+---@field mainid number ID of crafted item table entries.
+---@field canUse boolean
+---@field metadata table<string,any>
+---@field item string Internal item name, like coal.
+---@field group number
+
+---@class VorpInventoryOnItemUsedData
+---@field source number
+---@field item VorpInventoryOnItemUsedDataItem
+
+---@alias VorpInventoryOnInventoryChangeCallbackId string
+---@alias VorpInventoryResourceName string
+---@alias VorpInventoryDebouncedCallbackId string
+---@alias NssLibsInventoryOnChangeCallbackDebounced fun(_source:number):void

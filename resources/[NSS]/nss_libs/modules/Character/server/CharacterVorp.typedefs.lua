@@ -1,0 +1,180 @@
+---@class VorpCore
+---@field public getUser fun(source:number):VorpUser
+---@field public getUsers fun():VorpUser[]
+---@field public Warning fun(text:string):void
+---@field public Error fun(text:string):void
+---@field public Success fun(text:string):void
+---@field public NotifyTip fun(source:number, text:string, duration:number):void
+---@field public NotifyLeft fun(source:number, text:string, duration:number):void
+---@field public NotifyRightTip fun(source:number, text:string, duration:number):void
+---@field public NotifyObjective fun(source:number, text:string, duration:number):void
+---@field public NotifyTop fun(source:number, text:string, duration:number):void
+---@field public NotifyCenter fun(source:number, text:string, duration:number):void
+---@field public NotifyBottomRight fun(source:number, text:string, duration:number):void
+---@field public NotifySimpleTop fun(source:number, text:string, subtitle:string, duration:number):void
+---@field public NotifyFail fun(source:number, text:string, subtitle:string, duration:number):void
+---@field public NotifyUpdate fun(source:number, text:string, subtitle:string, duration:number):void
+---@field public NotifyAvanced fun(source:number, text:string, dict, icon:string, text_color, duration:number):void
+---@field public NotifyDead fun(source:number, title:string, audioRef, audioName:string, duration:number):void
+---@field public NotifyWarning fun(source:number, title:string, msg:string, audioRef, audioName:string, duration:number):void
+---@field public dbUpdateAddTables fun(tbl):void
+---@field public dbUpdateAddUpdates fun(updt):void
+---@field public AddWebhook fun(title:string, webhook:string, description:string, color, name:string, logo:string, footerlogo:string, avatar:string):void
+---@field public addRpcCallback fun(name:string, callback:function):void
+---@field public maxCharacters number
+
+---@class VorpUserData
+---@field public getIdentifier fun():string
+---@field public getGroup string
+---@field public getPlayerwarnings fun():any[]
+---@field public setPlayerWarnings fun(warnings:any[]):void
+---@field public getCharperm any[]
+---@field public source number
+---@field public setGroup fun(group:string):void
+---@field public setCharperm fun(char):void
+---@field public getUsedCharacter VorpUsedCharacter
+---@field public getUserCharacters VorpUserCharacter[]
+---@field public getNumOfCharacters fun():number
+---@field public addCharacter fun(firstname:string, lastname:string, skin, comps):void
+---@field public removeCharacter fun(charid:number):void
+---@field public setUsedCharacter fun(charid:number):void
+
+---@class VorpUser
+---@field public usedCharacterId number
+---@field public source number
+---@field public UsedCharacterId fun(value:number):number
+---@field public Source fun(value:number):number
+---@field public Numofcharacters fun(value:number):number
+---@field public Identifier fun(value):any
+---@field public License fun(value):any
+---@field public Group  fun(value:string):string
+---@field public Playerwarnings fun(value):any
+---@field public Charperm fun(value):any
+---@field public GetUser fun():VorpUserData
+---@field public UsedCharacter fun():VorpUsedCharacter
+---@field public UserCharacters fun():VorpUserCharacter[]
+---@field public addCharacter fun(firstname:string, lastname:string, skin, comps):void
+---@field public delCharacter fun(charIdentifier:number):void
+---@field public GetUsedCharacter fun():VorpUsedCharacter
+---@field public SetUsedCharacter fun(charid:number):void
+---@field public SaveUser fun():void
+---@field public LoadCharacters fun():void
+
+---@class VorpUsedCharacter
+---@field public Identifier fun():number
+---@field public CharIdentifier fun(value:number|nil):number
+---@field public Group fun(value:string|nil):string
+---@field public Job fun(value:string|nil):string
+---@field public Jobgrade fun(value:number|nil):number
+---@field public Firstname fun(value:string|nil):string
+---@field public Lastname fun(value:string|nil):string
+---@field public Inventory fun(value:VorpInventory|nil):VorpInventory
+---@field public Status fun(value:table|nil):table
+---@field public Coords fun(value:table|nil):table
+---@field public Money fun(value:number|nil):number
+---@field public Gold fun(value:number|nil):number
+---@field public Rol fun(value:any|nil):any
+---@field public HealthOuter fun(value:any|nil):any
+---@field public HealthInner fun(value:any|nil):any
+---@field public StaminaOuter fun(value:any|nil):any
+---@field public StaminaInner fun(value:any|nil):any
+---@field public Xp fun(value:number|nil):number
+---@field public Hours fun(value:number|nil):number
+---@field public IsDead fun(value:boolean|nil):boolean
+---@field public Skin fun(value:any|nil):any
+---@field public Comps fun(value:any|nil):any
+---@field public getCharacter fun():VorpCharacterData
+---@field public updateCharUi fun():void
+---@field public addCurrency fun(currency:number, quantity:number):void Currency: 0 = Money, 1 = Gold, 2 = Rol
+---@field public removeCurrency fun(currency:number, quantity:number):void Currency: 0 = Money, 1 = Gold, 2 = Rol
+---@field public addXp fun(quantity:number):void
+---@field public removeXp fun(quantity:number):void
+---@field public saveHealthAndStamina fun(healthOuter:number, healthInner:number, staminaOuter:number, staminaInner:number):void
+---@field public setJob fun(newjob:string):void
+---@field public setGroup fun(newgroup:string):void
+---@field public setDead fun(dead:boolean):void
+---@field public UpdateHours fun(hours:number):void
+---@field public SaveNewCharacterInDb fun(cb:fun(inserted_id:number)):void
+---@field public DeleteCharacter fun():void
+---@field public SaveCharacterCoords fun(coords:table):void
+---@field public SaveCharacterInDb fun():void
+
+---@class VorpCharacterData
+---@field public identifier number
+---@field public charIdentifier number
+---@field public group string
+---@field public job string
+---@field public jobGrade number
+---@field public money number
+---@field public gold number
+---@field public rol number
+---@field public xp number
+---@field public healthOuter number
+---@field public healthInner number
+---@field public staminaOuter number
+---@field public staminaInner number
+---@field public hours number
+---@field public firstname string
+---@field public lastname string
+---@field public inventory VorpInventory
+---@field public status any
+---@field public coords table
+---@field public isdead boolean
+---@field public skin any
+---@field public comps any
+---@field public setStatus fun(status:any):void
+---@field public setJobGrade fun(jobgrade:number):void
+---@field public setGroup fun(group:string):void
+---@field public setJob fun(job:string):void
+---@field public setMoney fun(money:number):void
+---@field public setGold fun(gold:number):void
+---@field public setRol fun(rol:number):void
+---@field public setXp fun(xp:number):void
+---@field public setFirstname fun(firstname:string):void
+---@field public setLastname fun(lastname:string):void
+---@field public updateSkin fun(skin:any):void
+---@field public updateComps fun(skin:any):void
+---@field public addCurrency fun(currency:number, quantity:number):void
+---@field public removeCurrency fun(currency:number, quantity:number):void
+---@field public addXp fun(xp:number):void
+---@field public removeXp fun(xp:number):void
+---@field public updateCharUi fun():void
+
+---@class VorpUserCharacter
+--TODO: Add all the properties
+
+---@class VorpCharacterRow
+---@field public identifier string
+---@field public charidentifier number
+---@field public steamname string
+---@field public group string
+---@field public money number
+---@field public gold number
+---@field public rol number
+---@field public xp number
+---@field public healthouter number
+---@field public healthinner number
+---@field public staminaouter number
+---@field public staminainner number
+---@field public hours number
+---@field public inventory string
+---@field public firstname string
+---@field public lastname string
+---@field public job string
+---@field public jobgrade number
+---@field public skinPlayer string
+---@field public compPlayer string
+---@field public coords string
+---@field public isdead number
+---@field public walk string
+---@field public meta string
+---@field public trust number
+---@field public info string
+---@field public postbox string
+---@field public ammo string
+---@field public gunsmith number
+---@field public supporter number
+---@field public status string
+---@field public motel string
+---@field public clan number
+---@field public LastLogin string|number

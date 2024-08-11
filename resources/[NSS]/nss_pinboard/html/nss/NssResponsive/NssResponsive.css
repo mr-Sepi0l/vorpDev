@@ -1,0 +1,26 @@
+:root {
+    --1rpx: calc(1rem / 16);
+    --5rpx: calc(var(--1rpx) * 5);
+    --7rpx: calc(var(--1rpx) * 7);
+    --10rpx: calc(var(--1rpx) * 10);
+    --15rpx: calc(var(--1rpx) * 15);
+    --20rpx: calc(var(--1rpx) * 20);
+    --25rpx: calc(var(--1rpx) * 25);
+    --30rpx: calc(var(--1rpx) * 30);
+    --35rpx: calc(var(--1rpx) * 35);
+    --40rpx: calc(var(--1rpx) * 40);
+    --50rpx: calc(var(--1rpx) * 50);
+    --75rpx: calc(var(--1rpx) * 75);
+    --100rpx: calc(var(--1rpx) * 100);
+}
+
+@font-face {
+    font-family: rdr;
+    src: url(./fonts/chineserocks.ttf) format('truetype');
+}
+
+body, html {
+    font-family: rdr, sans-serif;
+    font-size: 1rem;
+}
+

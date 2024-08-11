@@ -1,0 +1,82 @@
+.quest-log {
+    --padding-t: calc(var(--1rpx) * 50);
+    --padding-b: calc(var(--1rpx) * 25);
+    --padding-lr: calc(var(--1rpx) * 50);
+    --background-img: url(../img/quest_back_0.png);
+    background: rgba(0, 0, 0, 0.8) none;
+    padding: var(--padding-t) var(--padding-lr) var(--padding-b) var(--padding-lr);
+    min-width: calc(var(--1rpx) * 600);
+    max-width: 70vw;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 1));
+    user-select: none;
+    position: relative;
+}
+
+.quest-log__quest-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--1rpx) * 20);
+    max-height: calc(75vh - var(--padding-tb) * 2);
+    overflow: auto;
+    padding: calc(var(--1rpx) * 25) 0;
+}
+
+.quest-log__quest-blocked {
+    color: #900;
+    background:#330000 none;
+    padding: calc(var(--1rpx) * 7) calc(var(--1rpx) * 10);
+    border-radius: calc(var(--1rpx) * 5);
+    font-style: normal;
+    font-weight: lighter;
+    margin-bottom: calc(var(--1rpx) * 5);
+}
+
+.quest-log__quest {
+    --quest-transition: all 0.2s ease-in-out;
+    --quest-padding-lr: calc(var(--1rpx) * 50);
+    --title-color: rgba(0, 0, 0, 1);
+    --step-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    /*border-radius: calc(var(--1rpx) * 10);*/
+    padding: calc(var(--1rpx) * 15) var(--quest-padding-lr) calc(var(--1rpx) * 10) var(--quest-padding-lr);
+    transition: var(--quest-transition);
+    font-family: rdr, sans-serif;
+}
+
+.quest-log__quest--blocked {
+    pointer-events: none;
+    background: #ffffff44;
+}
+
+.quest-log__quest:hover {
+    --title-color: rgba(255, 255, 255, 1);
+    --step-color: rgba(255, 255, 255, 1);
+    background: rgba(150, 0, 0, 1);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.quest-log__quest-name {
+    font-size: 1.75rem;
+    color: var(--title-color);
+    transition: var(--quest-transition);
+}
+
+.quest-log__quest-step-name {
+    font-size: 1.2rem;
+    color: var(--step-color);
+    font-family: rdr_crock, sans-serif;
+    transition: var(--quest-transition);
+}
+
+.quest-log__headline {
+    background: #333 none;
+    padding: calc(var(--1rpx) * 10) calc(var(--1rpx) * 50);
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.quest-log__footer {
+    text-align: center;
+}

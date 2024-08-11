@@ -1,0 +1,24 @@
+---@class NssLibsWrapperFinder
+---@field registerResourceName fun(resource_name:string, get_api_func:fun()):void
+---@field getFirstFoundWrapper fun():any|nil, string|nil
+
+---@class NssLibsServerHelperAddEventHandlerApi
+---@field destroy fun():void
+
+---@class NssLibsServerHelper : NssLibsSharedHelper
+---@field _uid_counter number
+---@field BREAK_EACH_LOOP boolean
+---@field getUniqueId fun():string
+---@field doUntilTimeout fun(callback:fun(), timeout_in_ms:number, tick_in_ms:number):any|nil
+---@field waitUntilStarted fun(resource_name:string, timeout_in_ms:number, tick_in_ms:number):boolean
+---@field waitUntilFirstStarted fun(resource_names:table<string>, timeout_in_ms:number, tick_in_ms:number):string|nil
+---@field createWrapperFinder fun():NssLibsWrapperFinder
+---@field getCurrentTimestamp fun():number
+---@field getInGameDate fun(format:string):string|nil
+---@field getAllActivePlayerIds fun():number[]
+---@field eachActivePlayer fun(each_callback:fun(BREAK_EACH_LOOP:boolean, server_player_id:number)):void
+---@field hasPlayers fun():boolean
+---@field dateToTimestamp fun(date_str:string, format:string):number
+---@field getInGameDateTimestamp fun(format:string):number
+---@field addEventHandler fun(event_name:string, callback:function, resource_name:string, on_destroy_callback:NssLibsSharedHelperEventHandlerApiOnDestroyCallback|nil):NssLibsSharedHelperEventHandlerApi
+---@field requireFiles fun(resource_name:string, filenames:string|string[], additional_error_message:string|nil, silent:boolean|nil):boolean

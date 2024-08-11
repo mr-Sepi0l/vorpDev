@@ -1,0 +1,3 @@
+---@class NssLibsInventoryClientApi
+---@field public useItem fun(item_crafted_id:number, item_name:string):void
+---@field public useWeapon fun(weapon_id:number, weapon_name:string):void

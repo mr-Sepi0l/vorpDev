@@ -1,0 +1,24 @@
+---@alias NssLibsAttachPropClientProp number
+---
+---@class NssLibsAttachPropClientItemApi
+---@field prop_model_name string
+---@field x number
+---@field y number
+---@field z number
+---@field rot_x number
+---@field rot_y number
+---@field rot_z number
+---@field bone_id number
+---@field prop_network_id NssLibsAttachPropNetworkId
+---@field prop NssLibsAttachPropClientProp
+---@field detach fun(): void
+---@field attach fun(): void
+---@field isAttached fun(): boolean
+
+---@class NssLibsAttachPropClientApi
+---@field detachAll fun(): NssLibsAttachPropClientApi
+---@field awaitDetachAll fun(): NssLibsAttachPropClientApi
+---@field detachOnlyAllKnown fun(): NssLibsAttachPropClientApi
+---@field detachOnlyAllScenarioProps fun(): NssLibsAttachPropClientApi
+---@field awaitDetachOnlyAllScenarioProps fun(): NssLibsAttachPropClientApi
+---@field create fun(prop_model_name: string, x: number, y: number, z: number, rot_x: number, rot_y: number, rot_z: number, bone_id: number): NssLibsAttachPropClientItemApi

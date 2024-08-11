@@ -1,0 +1,22 @@
+---@class NssLibsBlipsApi
+---@field create fun(icon: string|number, title: string|nil, color: string|number|nil): NssLibsBlipApi
+---@field createAtCoords fun(x: number, y: number, z: number, icon: string|number, color: string|number|nil, title: string|nil): NssLibsBlipApi
+---@field createAttachedToEntity fun(entity: number, icon: string|number, color: string|number|nil, title: string|nil): NssLibsBlipApi
+---@field createRadiusAtCoords fun(x: number, y: number, z: number, range: number, color: string|number|nil): NssLibsBlipApi
+
+---@class NssLibsBlipApi
+---@field setTitle fun(title: string): NssLibsBlipApi
+---@field setCoords fun(x: number, y: number, z: number): NssLibsBlipApi
+---@field setEntity fun(entity: number): NssLibsBlipApi
+---@field setRadius fun(x: number, y: number, z: number, range: number): NssLibsBlipApi
+---@field setIcon fun(icon: string|number): NssLibsBlipApi
+---@field setColor fun(color: string|number): NssLibsBlipApi
+---@field setScale fun(scale: number): NssLibsBlipApi
+---@field setBig fun(): NssLibsBlipApi
+---@field setMedium fun(): NssLibsBlipApi
+---@field setSmall fun(): NssLibsBlipApi
+---@field show fun(): NssLibsBlipApi
+---@field hide fun(): NssLibsBlipApi
+---@field isVisible fun(): boolean
+---@field destroy fun(): void
+---@field addModifier fun(modifier: string|number): NssLibsBlipApi

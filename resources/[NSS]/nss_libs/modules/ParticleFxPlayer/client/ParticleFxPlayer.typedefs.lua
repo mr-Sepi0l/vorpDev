@@ -1,0 +1,22 @@
+---@class NssLibsParticleFxPlayerApi
+---@field setAsset fun(asset_dictionary:string, asset_name:string, is_looped_asset:boolean|nil): NssLibsParticleFxPlayerApi
+---@field attachToEntity fun(entity:number, offset_x:table<number>|number|nil, offset_y:table<number>|number|nil, offset_z:table<number>|number|nil): NssLibsParticleFxPlayerApi
+---@field setPosition fun(x:table<number>|number, y:table<number>|number, z:table<number>|number): NssLibsParticleFxPlayerApi
+---@field setRotation fun(x:number|nil, y:number|nil, z:number|nil): NssLibsParticleFxPlayerApi
+---@field setAxis fun(x:number|nil, y:number|nil, z:number|nil): NssLibsParticleFxPlayerApi
+---@field useNetwork fun(): NssLibsParticleFxPlayerApi
+---@field useLocal fun(): NssLibsParticleFxPlayerApi
+---@field play fun(duration_in_ms:number|nil, interval_in_ms:table<number>number|nil, on_finished:function|nil, on_error:fun(error_msg:string)|nil): NssLibsParticleFxPlayerApi
+---@field loopInfinite fun(interval_in_ms:table<number>|number|nil, on_finished:function|nil, on_error:fun(error_msg:string)|nil): NssLibsParticleFxPlayerApi
+---@field playerOnce fun(on_finished:function|nil, on_error:fun(error_msg:string)|nil): NssLibsParticleFxPlayerApi
+---@field stop fun(): NssLibsParticleFxPlayerApi
+---@field destroy fun(): void
+---@field isPlaying fun(): boolean
+---@field setScale fun(scale:table<number>|number): NssLibsParticleFxPlayerApi
+---@field setInterval fun(interval_in_ms:table<number>|number): NssLibsParticleFxPlayerApi
+---@field getHandle fun(): number
+
+---@class NssLibsParticleFxPlayerControllerApi
+---@field create fun(): NssLibsParticleFxPlayerApi
+---@field destroyAllExisting fun(): NssLibsParticleFxPlayerApi
+

@@ -1,0 +1,23 @@
+---@alias NssLibsSharedHelperCallbackHandlerCb fun(vararg:any):any
+---@alias NssLibsSharedHelperCallbackHandlerOnDestroyCallback fun(callback_api:NssLibsSharedHelperCallbackHandlerCbApi):boolean
+
+---@class NssLibsSharedHelperCallbackHandlerCbApi
+---@field private _callback NssLibsSharedHelperCallbackHandlerCb
+---@field private _enabled boolean
+---@field private _destroyed boolean
+---@field private _resource_name string
+---@field private _uid number
+---@field private _on_destroy_callback NssLibsSharedHelperCallbackHandlerOnDestroyCallback|nil
+---@field enable fun():NssLibsSharedHelperCallbackHandlerCb
+---@field disable fun():NssLibsSharedHelperCallbackHandlerCb
+---@field isEnabled fun():boolean
+---@field isDisabled fun():boolean
+---@field call NssLibsSharedHelperCallbackHandlerCb
+---@field getResourceName fun():string
+---@field getUid fun():number
+---@field isDestroyed fun():boolean
+---@field destroy fun():NssLibsSharedHelperCallbackHandlerCb
+---@field onDestroy fun(on_destroy_callback:NssLibsSharedHelperCallbackHandlerOnDestroyCallback):NssLibsSharedHelperCallbackHandlerCb
+
+---@alias NssLibsSharedHelperCallbackHandlerCbList table<number, NssLibsSharedHelperCallbackHandlerCbApi>
+---@alias NssLibsSharedHelperCallbackHandlerCbByResourceList table<string, NssLibsSharedHelperCallbackHandlerCbList>

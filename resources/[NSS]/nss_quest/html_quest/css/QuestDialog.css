@@ -1,0 +1,323 @@
+.quest-dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    z-index: 2000; /* On higher than the quest log */
+}
+
+.quest-dialog__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.quest-dialog__dialog {
+    --translateX: -50%;
+    --translateY: -50%;
+    --padding-left: var(--50rpx);
+    --padding-right: var(--50rpx);
+    --padding-top: calc(var(--1rpx) * 50);
+    --padding-bottom: calc(var(--1rpx) * 10);
+    --background-img: url(../img/quest_back_0.png);
+    --text-color: #000;
+    --title-color: #000;
+    --shadow-color: rgba(0,0,0,0.25);
+    --max-height: 85vh;
+    --margin-right:var(--10rpx);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: transparent var(--background-img) no-repeat;
+    background-size: 100% 100%;
+    z-index: 2;
+    -webkit-transform: translateY(var(--translateY)) translateX(var(--translateX));
+    transform: translateY(var(--translateY)) translateX(var(--translateX));
+    filter: drop-shadow(0 0 1rem #000);
+    width: calc(var(--1rpx) * 554);
+    max-height: var(--max-height);
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+.quest-dialog__dialog-header {
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    color: var(--title-color);
+    text-shadow: var(--1rpx) var(--1rpx) var(--1rpx) var(--shadow-color);
+    text-align: center;
+    padding: var(--padding-top) var(--padding-right) calc(var(--1rpx) * 15) var(--padding-left);
+}
+
+.quest-dialog__dialog-content {
+    position: relative;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    color: var(--text-color);
+    padding: 0 var(--padding-right) 0 var(--padding-left);
+}
+
+.quest-dialog__dialog-content-inner {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.quest-dialog__dialog-content-inner-shadow {
+    position: absolute;
+    left: var(--padding-left);
+    right: var(--padding-right);
+    z-index: 100;
+    height: var(--10rpx);
+    transition: opacity 250ms ease;
+}
+
+.quest-dialog__dialog-content-inner-shadow--top {
+    top: 0;
+    background-image: radial-gradient(farthest-side at 50% 0%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+}
+
+.quest-dialog__dialog-content-inner-shadow--bottom {
+    bottom: 0;
+    background-image: radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.quest-dialog__dialog-content-quest-text {
+    letter-spacing: var(--1rpx);
+    line-height: 1.75rem;
+    font-size: 1.5rem;
+    text-shadow: var(--1rpx) var(--1rpx) var(--1rpx) var(--shadow-color);
+    font-weight: normal;
+    margin-right: var(--margin-right);
+}
+
+.quest-dialog__dialog-item-list {
+    margin-top: var(--25rpx);
+    margin-right: var(--margin-right);
+}
+
+.quest-dialog__dialog-content-quest-headline,
+.quest-dialog__dialog-item-list-header {
+    --bg-url: url(../img/dialog_headline_back.png);
+    --text-color: #fff;
+    background: transparent var(--bg-url) no-repeat;
+    background-size: 100% 100%;
+    color: var(--text-color);
+    text-shadow: none;
+    padding: var(--5rpx) var(--10rpx);
+    font-size: 1.5rem;
+    text-align: center;
+    filter: drop-shadow(var(--1rpx) var(--1rpx) var(--1rpx) rgba(0,0,0,0.4));
+}
+
+.quest-dialog__dialog-content-quest-headline {
+    margin-bottom: var(--10rpx);
+    margin-right: var(--margin-right);
+}
+
+.quest-dialog__dialog-content-quest-headline--gold,
+.quest-dialog__dialog-item-list--rewards .quest-dialog__dialog-item-list-header {
+    --bg-url: url(../img/dialog_headline_back_gold.png);
+    --text-color: #482824;
+    filter: drop-shadow(var(--1rpx) var(--1rpx) var(--1rpx) #000);
+}
+
+.quest-dialog__dialog-item-list-body {
+    margin-top: calc(var(--1rpx) * 2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: var(--1rpx) var(--1rpx);
+    grid-template-areas:
+    ". . . .";
+}
+
+.quest-dialog__dialog-item-list-item {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.quest-dialog__dialog-item-list-item:before {
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: transparent url(../img/item_back.png) no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.quest-dialog__dialog-item-list-item-img {
+    max-width: calc(100% - var(--10rpx));
+    max-height: calc(100% - var(--10rpx));
+    min-width: 75%;
+    z-index: 1;
+    filter: drop-shadow(0 0 var(--10rpx) #000);
+}
+
+.quest-dialog__dialog-item-list-item-label-inner {
+    color: #fff;
+    font-size: 1.25rem;
+    text-align: center;
+    max-height: calc(100% - var(--10rpx));
+    max-width: calc(100% - var(--10rpx));
+    overflow: auto;
+    word-break: break-word;
+    text-shadow: 0 0 var(--1rpx) rgba(0,0,0,0.6);
+}
+
+.quest-dialog__dialog-item-list-item-label {
+    --translateY: -50%;
+    --translateX: -50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(var(--translateX)) translateY(var(--translateY));
+    z-index: 3;
+    background: rgba(0,0,0,0.5) none;
+    opacity: 0;
+    transition: opacity 250ms ease;
+    width: 100%;
+    height: 100%;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.quest-dialog__dialog-item-list-item-label:hover {
+    opacity: 1;
+}
+
+.quest-dialog__dialog-item-list-item-amount {
+    position: absolute;
+    right: var(--10rpx);
+    bottom: var(--10rpx);
+    background: #fff none;
+    color: #000;
+    padding: var(--5rpx) var(--10rpx);
+    border-radius: var(--10rpx);
+    text-align: center;
+    font-size: 1rem;
+    line-height: normal;
+    box-shadow: var(--1rpx) var(--1rpx) var(--5rpx) rgba(0, 0, 0, 0.5);
+    letter-spacing: initial;
+    white-space: nowrap;
+    text-shadow: none;
+    z-index: 2;
+}
+
+.quest-dialog__dialog-item-list-item-amount-times {
+    font-family: sans-serif;
+    font-weight: bold;
+    transform: translateY(calc(var(--1rpx) * 2));
+    display:inline-block;
+}
+
+.quest-dialog__dialog-footer {
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+
+    padding-top: var(--padding-bottom);
+
+    --translateY: 35%;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.quest-dialog__dialog-footer > .quest-dialog__button-container {
+    transform: translateY(var(--translateY));
+    -webkit-transform: translateY(var(--translateY));
+}
+
+.quest-dialog__dialog-title {
+    font-size: 2.5rem;
+}
+
+.quest-dialog__dialog-sub-title {
+    font-size: 2rem;
+    margin-top: var(--10rpx);
+}

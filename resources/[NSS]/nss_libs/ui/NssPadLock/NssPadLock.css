@@ -1,0 +1,368 @@
+body {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.combi-lock {
+    --translateX: 0;
+    --translateY: 0;
+    --combi-lock-anim-dur: 500ms;
+    --combi-lock-error_anim-dur: 800ms;
+    --factor: 3.15;
+    --slide-number-height: calc(var(--1rpx) * 30);
+    --slide-number-width: calc(var(--1rpx) * 40);
+    filter: drop-shadow(0 0 var(--10rpx) rgba(0, 0, 0, 0.6));
+}
+
+.combi-lock:not(.combi-lock--visible) {
+    display: none;
+}
+
+.combi-lock__slide-in {
+    -webkit-animation: combi-lock-anim__slide-in-top var(--combi-lock-anim-dur) ease-out both;
+    animation: combi-lock-anim__slide-in-top var(--combi-lock-anim-dur) ease-out both;
+}
+
+.combi-lock__slide-out {
+    -webkit-animation: combi-lock-anim__slide-out-bottom var(--combi-lock-anim-dur)  ease-in both;
+    animation: combi-lock-anim__slide-out-bottom var(--combi-lock-anim-dur) ease-in both;
+}
+
+.combi-lock__inner {
+    --translateX: 0;
+    --translateY: 0;
+    aspect-ratio: 681/830;
+    padding: calc(var(--1rpx) * 35);
+    position: relative;
+}
+
+.combi-lock--error > .combi-lock__inner {
+    animation: combi-lock-anim__shake var(--combi-lock-error_anim-dur)  cubic-bezier(.36, .07, .19, .97) both;
+    -webkit-animation: combi-lock-anim__shake var(--combi-lock-error_anim-dur) cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.combi-lock__inner::after {
+    content: "";
+    display: block;
+    background: transparent url("./img/combi_lock_body.png") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.combi-lock__closer {
+    --translateY: -60%;
+    --translateX: -50%;
+    --transition-duration: 0.3s;
+    --rotate: 0deg;
+    background: transparent url("./img/combi_lock_closer.png") no-repeat;
+    background-size: 100% 100%;
+    aspect-ratio: 550/478;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateY(var(--translateY)) translateX(var(--translateX)) rotate(var(--rotate));
+    transform-origin: right bottom;
+    z-index: 1;
+    transition: transform var(--transition-duration) ease;
+}
+
+.combi-lock__closer--open {
+    --rotate: 45deg;
+}
+
+.combi-lock__rollers-body {
+    margin-top: 60%;
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    border-radius: calc(var(--1rpx) * 20);
+    overflow: hidden;
+    border: 1px solid #000;
+    transform: translateY(-50%);
+    filter: drop-shadow(0 0 var(--10rpx) rgba(0, 0, 0, 1)) drop-shadow(0 0 var(--10rpx) rgba(0, 0, 0, 1));
+    z-index: 3;
+}
+
+.combi-lock__top {
+    height: calc(var(--1rpx) * 20);
+    background: transparent url("./img/combi_lock_number_top.png") repeat-x;
+    background-size: auto 100%;
+    transform: translateY(var(--1rpx));
+}
+
+.combi-lock__bottom {
+    height: calc(var(--1rpx) * 20);
+    background: transparent url("./img/combi_lock_number_bottom.png") repeat-x;
+    background-size: auto 100%;
+    transform: translateY(calc(var(--1rpx) * -1));
+}
+
+.combi-lock__rollers {
+    position: relative;
+    height: calc(var(--slide-number-height) * var(--factor));
+    overflow: visible;
+    background: #000 none;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    grid-template-columns: min-content;
+    grid-template-rows: 1fr;
+    gap: 0 var(--1rpx);
+    grid-template-areas:
+    ".";
+}
+
+.combi-lock__roller {
+    position: relative;
+    height: calc(var(--slide-number-height) * var(--factor));
+    width: var(--slide-number-width);
+    overflow: visible;
+    cursor: ns-resize;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.combi-lock__roller::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--1rpx) * -4);
+    left: calc(var(--1rpx) * -1);
+    right: calc(var(--1rpx) * -1);
+    height: calc(var(--1rpx) * 4);
+    background: transparent url("./img/combi_lock_number_top_border.png") no-repeat;
+    background-size: cover;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.combi-lock__roller::after {
+    content: "";
+    position: absolute;
+    bottom: calc(var(--1rpx) * -4);
+    left: calc(var(--1rpx) * -1);
+    right: calc(var(--1rpx) * -1);
+    height: calc(var(--1rpx) * 4);
+    background: transparent url("./img/combi_lock_number_bottom_border.png") no-repeat;
+    background-size: cover;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.combi-lock__roller-shadow {
+    position: absolute;
+    top: 0;
+    left: calc(var(--1rpx) * -1);
+    right: calc(var(--1rpx) * -1);
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 95%, rgba(0, 0, 0, 1) 100%);
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: 0 0 var(--10rpx) rgba(0, 0, 0, 0.8);
+    filter: drop-shadow(0 0 var(--10rpx) rgba(0, 0, 0, 0.8));
+}
+
+.combi-lock__carousel {
+    --perspective: calc(var(--1rpx) * 250);
+    --deg: 0deg;
+    --transition-duration: 250ms;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: perspective(var(--perspective)) rotateX(var(--deg));
+    transition: transform var(--transition-duration);
+    width: 100%;
+    height: var(--slide-number-height);
+    background: #000 none;
+    pointer-events: none;
+}
+
+.combi-lock__separator {
+    height: 100%;
+    width: calc(var(--1rpx) * 15);
+    background: transparent url("./img/combi_lock_number_spacer.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.combi-lock__number {
+    position: absolute;
+    background: transparent url("./img/combi_lock_number.png") no-repeat;
+    background-size: 100% 100%;
+    width: var(--slide-number-width);
+    height: var(--slide-number-height);
+    color: #CBA04E;
+    text-shadow: 0 calc(var(--1rpx) * -1) 0 rgba(0, 0, 0, 0.8), 0 var(--1rpx) 0 rgba(255, 255, 255, 0.8);
+    text-align: center;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    font-size: calc(var(--slide-number-height) * 0.8);
+    font-family: "Times New Roman", Times, serif;
+}
+
+.combi-lock__unlock-btn {
+    position: absolute;
+    bottom: calc(var(--1rpx) * 50);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/*region slide-in-top*/
+/*noinspection CssUnresolvedCustomProperty*/
+@-webkit-keyframes combi-lock-anim__slide-in-top {
+    0% {
+        -webkit-transform: translateY(-50vh) translateX(var(--translateX));
+        transform: translateY(-50vh) translateX(var(--translateX));
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(var(--translateY)) translateX(var(--translateX));
+        transform: translateY(var(--translateY)) translateX(var(--translateX));
+        opacity: 1;
+    }
+}
+
+/*noinspection CssUnresolvedCustomProperty*/
+@keyframes combi-lock-anim__slide-in-top {
+    0% {
+        -webkit-transform: translateY(-50vh) translateX(var(--translateX));
+        transform: translateY(-50vh) translateX(var(--translateX));
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(var(--translateY)) translateX(var(--translateX));
+        transform: translateY(var(--translateY)) translateX(var(--translateX));
+        opacity: 1;
+    }
+}
+
+/*endregion*/
+
+/*region slide-out-bottom*/
+/*noinspection CssUnresolvedCustomProperty*/
+@-webkit-keyframes combi-lock-anim__slide-out-bottom {
+    0% {
+        -webkit-transform: translateY(var(--translateY)) translateX(var(--translateX));
+        transform: translateY(var(--translateY)) translateX(var(--translateX));
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(50vh) translateX(var(--translateX));
+        transform: translateY(50vh) translateX(var(--translateX));
+        opacity: 0;
+    }
+}
+
+/*noinspection CssUnresolvedCustomProperty*/
+@keyframes combi-lock-anim__slide-out-bottom {
+    0% {
+        -webkit-transform: translateY(var(--translateY)) translateX(var(--translateX));
+        transform: translateY(var(--translateY)) translateX(var(--translateX));
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(50vh) translateX(var(--translateX));
+        transform: translateY(50vh) translateX(var(--translateX));
+        opacity: 0;
+    }
+}
+
+/*endregion*/
+
+/*region Shake Animation*/
+@keyframes combi-lock-anim__shake {
+    10%, 90% {
+        transform: translateY(0) translateX(-1px);
+    }
+
+    20%, 80% {
+        transform: translateY(0) translateX(2px);
+    }
+
+    30%, 50%, 70% {
+        transform: translateY(0) translateX(-4px);
+    }
+
+    40%, 60% {
+        transform: translateY(0) translateX(4px);
+    }
+}
+
+@-webkit-keyframes combi-lock-anim__shake {
+    10%, 90% {
+        transform: translateY(0) translateX(-1px);
+    }
+
+    20%, 80% {
+        transform: translateY(0) translateX(2px);
+    }
+
+    30%, 50%, 70% {
+        transform: translateY(0) translateX(-4px);
+    }
+
+    40%, 60% {
+        transform: translateY(0) translateX(4px);
+    }
+}
+
+/*endregion*/

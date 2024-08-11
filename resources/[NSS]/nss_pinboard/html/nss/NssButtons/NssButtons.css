@@ -1,0 +1,152 @@
+@font-face {
+    font-family: ui;
+    src: url(./fonts/crock.ttf) format('truetype');
+}
+
+.nss-btn {
+    --padding-tb: calc(var(--1rpx) * 12);
+    --padding-lr: calc(var(--1rpx) * 25);
+    --min-width: var(--100rpx);
+    --img-url: url(./img/btn_bg.png);
+    --font-size: 1rem;
+    --color: rgba(255, 255, 255, 0.8);
+    --hover-color: rgba(255, 255, 255, 1);
+    background: transparent var(--img-url) no-repeat;
+    background-size: 100% 100%;
+    padding: var(--padding-tb) var(--padding-lr);
+    border: none;
+    outline: none;
+    color: var(--color);
+    font-size: var(--font-size);
+    font-weight: bold;
+    font-family: "ui", serif;
+    cursor: pointer;
+    user-select: none;
+    filter: drop-shadow(0px 0px var(--5rpx) rgba(0, 0, 0, 0.6));
+    min-width: var(--min-width);
+    text-align: center;
+}
+
+.nss-btn--icon {
+    --padding-lr: calc(var(--1rpx) * 15);
+    --min-width: unset;
+}
+
+.nss-btn--white {
+    --img-url: url(./img/btn_bg_white.png);
+    --color: #000;
+}
+
+.nss-btn--grey {
+    --img-url: url(./img/btn_bg_grey.png);
+}
+
+.nss-btn--danger {
+    --img-url: url(./img/btn_bg_red.png);
+}
+
+.nss-btn--gold {
+    --img-url: url(./img/btn_bg_gold.png);
+    --color: rgba(54, 30, 0, 0.8);
+    --hover-color: rgba(54, 30, 0, 1);
+}
+
+.nss-btn--small {
+    --font-size: 0.8rem;
+}
+
+.nss-btn--very-small.nss-btn--icon {
+    --padding-lr: calc(var(--1rpx) * 10);
+    --padding-tb: calc(var(--1rpx) * 10);
+}
+
+.nss-btn--very-small {
+    --font-size: 0.5rem;
+}
+
+.nss-btn--large {
+    --font-size: 1.25rem;
+}
+
+.nss-btn--borderless {
+    --padding-lr: calc(var(--1rpx) * 5);
+    --padding-tb: calc(var(--1rpx) * 5);
+}
+
+.nss-btn:not(:disabled):hover {
+    color: var(--hover-color);
+    --scale: 1.1;
+    transform: scale(var(--scale));
+    -wekbit-transform: scale(var(--scale));
+}
+
+.nss-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.nss-btn--glow {
+    position: relative;
+    z-index: 0;
+}
+
+.nss-btn--glow:before {
+    --glow-width: calc(var(--1rpx) * -2);
+    --bg-rotate: 45deg;
+    content: '';
+    background: linear-gradient(var(--bg-rotate), #00ffd9, #dd00ff, #fffdfc, #dd00ff, #00ffd9);
+    position: absolute;
+    top: calc(var(--glow-width) * -1);
+    left: calc(var(--glow-width) * -1);
+    background-size: 400%;
+    z-index: -2;
+    filter: blur(var(--10rpx));
+    width: calc(100% + (var(--glow-width) * 2));
+    height: calc(100% + (var(--glow-width) * 2));
+    animation: glowing 15s linear infinite;
+    opacity: 0;
+    transition: opacity .1s ease-in-out;
+}
+
+.nss-btn--danger.nss-btn--glow:before {
+    background: linear-gradient(var(--bg-rotate), #d00000, #850000, rgba(255, 166, 166, 0), #850000, #d00000);
+    background-size: 400%;
+}
+
+.nss-btn--gold.nss-btn--glow:before {
+    background: linear-gradient(var(--bg-rotate), #ffb700, #fff77b, rgba(255, 255, 255, 0), #fff77b, #ffb700);
+    background-size: 400%;
+}
+
+.nss-btn--glow:after {
+    content: '';
+    background: transparent var(--img-url) no-repeat;
+    background-size: 100% 100%;
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 1));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity .3s ease-in-out .1s;
+}
+
+.nss-btn--glow:not(:disabled):hover:after,
+.nss-btn--glow:not(:disabled):hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+
+        background-position: 0 0;
+    }
+}

@@ -1,0 +1,103 @@
+---@class NssLibsPromptsPromptColors
+---@field Red fun(str:string|nil):string
+---@field Yellow fun(str:string|nil):string
+---@field Orange fun(str:string|nil):string
+---@field Grey fun(str:string|nil):string
+---@field White fun(str:string|nil):string
+---@field LightGrey fun(str:string|nil):string
+---@field Black fun(str:string|nil):string
+---@field Pink fun(str:string|nil):string
+---@field Blue fun(str:string|nil):string
+---@field Purple fun(str:string|nil):string
+---@field LightBlue fun(str:string|nil):string
+---@field Yellow fun(str:string|nil):string
+---@field LightPink fun(str:string|nil):string
+---@field Green fun(str:string|nil):string
+---@field DarkBlue fun(str:string|nil):string
+---@field LightRedIsh fun(str:string|nil):string
+
+---@class NssLibsPromptsApi
+---@field createGroup fun(label:string|nil): NssLibsPromptsGroupApi
+---@field setLinkChunkModeNearest fun():NssLibsPromptsApi
+---@field setLinkChunkModeAll fun():NssLibsPromptsApi
+---@field colors NssLibsPromptsPromptColors
+---@field private resource_name string
+
+---@alias NssLibsPromptsGroupInjectEntityCallback fun():number|nil
+
+---@class NssLibsPromptsGroupApi
+---@field addJustPressedPrompt fun(label:string|nil, key:number|string|nil, callback:function|nil, release_callback:function|nil): NssLibsPromptsPromptApi Default
+---@field addJustReleasedPrompt fun(label:string|nil, key:number|string|nil, callback:function|nil): NssLibsPromptsPromptApi
+---@field addPressedPrompt fun(label:string|nil, key:number|string|nil, callback:function|nil, release_callback:function|nil): NssLibsPromptsPromptApi
+---@field addReleasedPrompt fun(label:string|nil, key:number|string|nil, callback:function|nil): NssLibsPromptsPromptApi
+---@field addStandardHoldPrompt fun(label:string|nil, key:number|string|nil, callback:function|nil, release_callback:function|nil): NssLibsPromptsPromptApi
+---@field addStandardizedHoldPrompt fun(label:string|nil, key:number|string|nil, callback:function|nil, release_callback:function|nil): NssLibsPromptsPromptApi
+---@field setLabel fun(label: string):NssLibsPromptsGroupApi
+---@field show fun():NssLibsPromptsGroupApi
+---@field hide fun():NssLibsPromptsGroupApi
+---@field showOnDeath fun():NssLibsPromptsGroupApi
+---@field destroy fun():void
+---@field linkToCoords fun(x:number, y:number, z:number, radius:number):NssLibsPromptsLinkerGroupToCoordsApi
+---@field linkToEntity fun(entity_id:number, radius:number, inject_entity_id_cb:NssLibsPromptsGroupInjectEntityCallback|nil):NssLibsPromptsLinkerGroupToCoordsApi
+---@field linkToPlayer fun(player_server_id:number, radius:number):NssLibsPromptsLinkerGroupToCoordsApi
+---@field linkToEntityModels fun(model_names_or_hashes:number|string|table<number|string>, radius:number):NssLibsPromptsLinkerGroupToCoordsApi
+---@field disable fun():NssLibsPromptsGroupApi
+---@field enable fun():NssLibsPromptsGroupApi
+---@field hideOnMovement fun():NssLibsPromptsGroupApi
+---@field showOnMovement fun():NssLibsPromptsGroupApi
+---@field isHideOnMovement fun():boolean
+---@field allowOnMount fun():NssLibsPromptsGroupApi
+---@field forbidOnMount fun():NssLibsPromptsGroupApi
+---@field allowInWater fun():NssLibsPromptsGroupApi
+---@field forbidInWater fun():NssLibsPromptsGroupApi
+---@field allowInVehicle fun():NssLibsPromptsGroupApi
+---@field forbidInVehicle fun():NssLibsPromptsGroupApi
+---@field allowOnFloor fun():NssLibsPromptsGroupApi
+---@field forbidOnFloor fun():NssLibsPromptsGroupApi
+---@field allowInAir fun():NssLibsPromptsGroupApi
+---@field forbidInAir fun():NssLibsPromptsGroupApi
+---@field allowDuringDeath fun():NssLibsPromptsGroupApi
+---@field forbidDuringDeath fun():NssLibsPromptsGroupApi
+---@field allowDuringMovement fun():NssLibsPromptsGroupApi
+---@field forbidDuringMovement fun():NssLibsPromptsGroupApi
+---@field allowDuringHogtied fun():NssLibsPromptsGroupApi
+---@field forbidDuringHogtied fun():NssLibsPromptsGroupApi
+---@field setAllPromptsToStandardRestrictionsOnFoot fun():NssLibsPromptsGroupApi
+---@field setMovementDetectionSensitivity fun(sensitivity_in_meters:number):NssLibsPromptsGroupApi
+---@field private resource_name string
+
+---@class NssLibsPromptsPromptApi
+---@field setLabel fun(label: string):NssLibsPromptsPromptApi
+---@field enable fun():NssLibsPromptsPromptApi
+---@field disable fun():NssLibsPromptsPromptApi
+---@field show fun():NssLibsPromptsPromptApi
+---@field hide fun():NssLibsPromptsPromptApi
+---@field addKey fun(key: number, callback: (fun():void), release_callback: function|nil):NssLibsPromptsPromptApi
+---@field destroy fun():void
+---@field allowOnMount fun():NssLibsPromptsPromptApi
+---@field forbidOnMount fun():NssLibsPromptsPromptApi
+---@field allowInVehicle fun():NssLibsPromptsPromptApi
+---@field forbidInVehicle fun():NssLibsPromptsPromptApi
+---@field allowInWater fun():NssLibsPromptsPromptApi
+---@field forbidInWater fun():NssLibsPromptsPromptApi
+---@field allowOnFloor fun():NssLibsPromptsPromptApi
+---@field forbidOnFloor fun():NssLibsPromptsPromptApi
+---@field allowInAir fun():NssLibsPromptsPromptApi
+---@field forbidInAir fun():NssLibsPromptsPromptApi
+---@field allowDuringDeath fun():NssLibsPromptsPromptApi
+---@field forbidDuringDeath fun():NssLibsPromptsPromptApi
+---@field allowDuringMovement fun():NssLibsPromptsPromptApi
+---@field forbidDuringMovement fun():NssLibsPromptsPromptApi
+---@field allowDuringHogtied fun():NssLibsPromptsPromptApi
+---@field forbidDuringHogtied fun():NssLibsPromptsPromptApi
+
+---@class NssLibsPromptsLinkerGroupToCoordsApi
+---@field activate fun():NssLibsPromptsLinkerGroupToCoordsApi
+---@field deactivate fun():NssLibsPromptsLinkerGroupToCoordsApi
+---@field isActive fun():boolean
+---@field destroy fun():void
+
+---@class NssLibsPromptsCoordsVector3
+---@field x number
+---@field y number
+---@field z number

@@ -1,0 +1,36 @@
+---@class NssLibsClientHelperPlayersInRadiusResult
+---@field players NssLibsClientHelperPlayerIdItem[]
+---@field server_ids number[]
+---@field client_ids number[]
+---@field nearest_player NssLibsClientHelperPlayerIdItem|nil
+
+---@class NssLibsClientHelperAddEventHandlerApi
+---@field destroy fun():void
+---@field isDestroyed() fun():boolean
+
+---@class NssLibsClientHelper : NssLibsSharedHelper
+---@field _uid_counter number
+---@field getUniqueId fun():string
+---@field getCurrentTimestamp fun():number
+---@field getCurrentMsTimestamp fun():number
+---@field getCurrentServerTimestamp fun():number
+---@field getAllActivePlayerIds fun():NssLibsClientHelperPlayerIdItem[]
+---@field getPlayersInRadius fun(ped:number|nil, radius:number|nil):NssLibsClientHelperPlayerIdItem[]|nil
+---@field getPlayerClientIdsInRadius fun(ped:number|nil, radius:number|nil):number[]|nil
+---@field getPlayerServerIdsInRadius fun(ped:number|nil, radius:number|nil):number[]|nil
+---@field getNearestPlayersInRadius fun(ped:number|nil, radius:number|nil, ignore_dead:boolean|nil):NssLibsClientHelperPlayerIdItem|nil
+---@field getInGameDate fun(format:string):string
+---@field hasPlayers fun():boolean
+---@field dateToTimestamp fun(date_str:string, format:string):number
+---@field getInGameDateTimestamp fun(format:string):number
+---@field getClientPlayerIdFromServer fun(server_player_id:number):number
+---@field getServerPlayerId fun():number
+---@field timeout fun(callback:fun(), interval_in_ms:number):void
+---@field addEventHandler fun(event_name:string, callback:function, resource_name:string, on_destroy_callback:NssLibsSharedHelperEventHandlerApiOnDestroyCallback|nil):NssLibsSharedHelperEventHandlerApi
+---@field waitUntilLoadingsScreenEnds fun():void
+---@field playAnimation fun(ped:number, dict:string, name:string, flag:number|nil):void
+---@field requestAnimDict fun(dict:string):boolean
+
+---@class NssLibsClientHelperPlayerIdItem
+---@field client number
+---@field server number

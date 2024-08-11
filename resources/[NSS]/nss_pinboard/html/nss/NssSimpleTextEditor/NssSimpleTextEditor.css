@@ -1,0 +1,122 @@
+.nss-simple-text-editor__section {
+    position: relative;
+
+}
+
+.nss-simple-text-editor__section-options {
+    --translateX: 0;
+    --translateY: -75%;
+    position: absolute;
+    transform: translateX(var(--translateX)) translateY(var(--translateY));
+    -webkit-transform: translateX(var(--translateX)) translateY(var(--translateY));
+    top: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+}
+
+.nss-simple-text-editor__section:hover .nss-simple-text-editor__section-footer,
+.nss-simple-text-editor__section:hover .nss-simple-text-editor__section-options {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nss-simple-text-editor__section-footer {
+    --translateX: -50%;
+    --translateY: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(var(--translateX)) translateY(var(--translateY));
+    -webkit-transform: translateX(var(--translateX)) translateY(var(--translateY));
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+}
+
+.nss-simple-text-editor__section-text {
+    padding: var(--25rpx);
+    border: none;
+    outline: 0 solid transparent;
+}
+
+.nss-simple-text-editor__section--align-left .nss-simple-text-editor__section-text {
+    text-align: left;
+}
+
+.nss-simple-text-editor__section--align-center .nss-simple-text-editor__section-text {
+    text-align: center;
+}
+
+.nss-simple-text-editor__section--align-right .nss-simple-text-editor__section-text {
+    text-align: right;
+}
+
+.nss-simple-text-editor__section-text:focus {
+    background: rgba(0, 0, 0, 0.1) none;
+}
+
+.nss-simple-text-editor__section:hover {
+    z-index: 10;
+}
+
+.nss-simple-text-editor__section:hover .nss-simple-text-editor__section-text {
+    background: rgba(0, 0, 0, 0.2) none;
+}
+
+.nss-simple-text-editor__section--text .nss-simple-text-editor__section-text-btn,
+.nss-simple-text-editor__section--headline .nss-simple-text-editor__section-headline-btn,
+.nss-simple-text-editor__section-remove-btn--disabled {
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.nss-simple-text-editor__btn {
+    z-index: 10;
+}
+
+.nss-simple-text-editor__section--error {
+    background: rgba(255, 0, 0, 0.1) none;
+    animation: nss-simple-text-editor-anim__shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    -webkit-animation: nss-simple-text-editor-anim__shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes nss-simple-text-editor-anim__shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@-webkit-keyframes nss-simple-text-editor-anim__shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

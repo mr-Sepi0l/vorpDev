@@ -1,0 +1,7 @@
+---@class NssLibsDatabaseInsertResult
+---@field warningStatus number
+---@field serverStatus number
+---@field fieldCount number
+---@field insertId number
+---@field info string
+---@field affectedRows number

@@ -1,0 +1,45 @@
+---@class NssLibsNpcApi
+---@field create fun(model: string, x: number, y: number, z: number, heading: number, outfit: number|nil): NssLibsNpcEntityApi
+
+---@class NssLibsNpcEntityApi
+---@field destroy fun(): NssLibsNpcEntityApi
+---@field show fun(): NssLibsNpcEntityApi
+---@field hide fun(): NssLibsNpcEntityApi
+---@field setCoords fun(x: number, y: number, z: number, heading: number): NssLibsNpcEntityApi
+---@field setModel fun(model: string|nil, outfit: number|nil): NssLibsNpcEntityApi
+---@field setOutfit fun(outfit: number): NssLibsNpcEntityApi
+---@field addAnimation fun(animation_dictionary: string|nil, animation_name: string|nil, delay_in_ms:number|nil, loop: boolean|nil, times:number|nil, only_upper_body: boolean|nil): NssLibsNpcEntityApi
+---@field addTimeWindow fun(start_hour: number, start_minute: number, end_hour: number, end_minute: number): NssLibsNpcEntityApi
+---@field resetAnimations fun(): NssLibsNpcEntityApi
+---@field setScale fun(scale: number): NssLibsNpcEntityApi
+---@field setScenario fun(scenario: string|nil): NssLibsNpcEntityApi
+---@field setSpawnRadius fun(radius: number|nil): NssLibsNpcEntityApi
+---@field startRangeCheck fun(radius: number|nil): NssLibsNpcEntityApi
+---@field setWeapon fun(weapon: string|nil): NssLibsNpcEntityApi
+---@field resetTimeWindow fun(): NssLibsNpcEntityApi
+---@field update fun(): NssLibsNpcEntityApi
+---@field onShow fun(callback: fun()): NssLibsNpcEntityApi
+---@field onHide fun(callback: fun()): NssLibsNpcEntityApi
+---@field onEnterTimeWindow fun(callback: fun()): NssLibsNpcEntityApi
+---@field onLeaveTimeWindow fun(callback: fun()): NssLibsNpcEntityApi
+---@field hasTimeWindows fun(): boolean
+---@field isInTimeWindow fun(): boolean
+---@field disablePlaceOnGround fun(): NssLibsNpcEntityApi
+---@field enablePlaceOnGround fun(): NssLibsNpcEntityApi
+---@field getEntity fun(): number|nil
+---@field ANIMATE_ONLY_UPPER_BODY boolean
+---@field ANIMATE_FULL_BODY boolean
+
+---@class NssLibsNpcEntityAnimation
+---@field animation_dictionary string
+---@field animation_name string
+---@field only_upper_body boolean
+---@field delay_in_ms number
+---@field loop boolean
+---@field times number
+
+---@class NssLibsNpcEntityTimeWindow
+---@field start_hour number
+---@field start_minute number
+---@field end_hour number
+---@field end_minute number

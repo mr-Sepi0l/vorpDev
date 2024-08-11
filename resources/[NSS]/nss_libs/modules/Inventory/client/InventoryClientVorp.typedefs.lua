@@ -1,0 +1,11 @@
+---@alias NssLibsInventoryClientVorpOpenCustomInvCallback fun(custom_inv_name:string, custom_inv_id:number , custom_inv_capacity:number):void
+
+---@class NssLibsInventoryClientVorp : NssLibsClass
+---@field public useItem fun(item_crafted_id:number, item_name:string):void
+---@field public useWeapon fun(weapon_id:number, weapon_name:string):void
+---@field private _open_custom_inventory_callbacks table<number, NssLibsSharedHelperCallbackHandlerCbApi>
+---@field private _open_custom_inventory_listener_active boolean
+---@field private _setupCustomInventoryOpenListener fun():void
+---@field private _onCustomInvOpen NssLibsInventoryClientVorpOpenCustomInvCallback
+---@field useItem fun(item_crafted_id:number, item_name:string):void
+---@field useWeapon fun(weapon_id:number, weapon_name:string):void

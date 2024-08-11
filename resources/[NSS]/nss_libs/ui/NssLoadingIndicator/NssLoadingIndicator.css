@@ -1,0 +1,82 @@
+.nss-loading-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+    background-size: 100% 100%;
+}
+
+.nss-loading-indicator--hidden {
+    display: none;
+}
+
+.nss-loading-indicator--show {
+    -webkit-animation: nss-loading-indicator-anim__fade-in 0.3s ease-out both;
+    animation: nss-loading-indicator-anim__fade-in 0.3s ease-out both;
+}
+
+.nss-loading-indicator--hide {
+    -webkit-animation: nss-loading-indicator-anim__fade-out 0.3s ease-out both;
+    animation: nss-loading-indicator-anim__fade-out 0.3s ease-out both;
+}
+
+.quest-loading-indicator__loader {
+}
+
+.quest-loading-indicator__loader-img {
+    width: calc(var(--1rpx) * 100);
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1/1;
+    filter: invert(1) drop-shadow(0 0 var(--10rpx) #000);
+    background: transparent url(./img/loading-indicator.gif) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+/*region fade-in*/
+@-webkit-keyframes nss-loading-indicator-anim__fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes nss-loading-indicator-anim__fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*endregion*/
+
+/*region fade-out*/
+@-webkit-keyframes nss-loading-indicator-anim__fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes nss-loading-indicator-anim__fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/*endregion*/
